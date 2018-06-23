@@ -832,6 +832,7 @@ ifeq ($(strip $(NO_CORE)),)
 
         # USB Core if samd or sam
         ifeq ($(findstring sam, $(strip $(ARCHITECTURE))), sam)
+            CORE_C_SRCS    += $(wildcard $(ARDUINO_CORE_PATH)/avr/*.c) # avr core emulation files
             CORE_C_SRCS    += $(wildcard $(ARDUINO_CORE_PATH)/USB/*.c)
             CORE_CPP_SRCS  += $(wildcard $(ARDUINO_CORE_PATH)/USB/*.cpp)
         endif
